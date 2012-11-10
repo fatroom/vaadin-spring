@@ -5,10 +5,10 @@
 
 package com.navinpeiris.vaadin_spring;
 
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.UI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-
-import com.vaadin.Application;
 
 /**
  * Main application entry point for the Vaadin-Spring Demo Application.
@@ -17,7 +17,7 @@ import com.vaadin.Application;
  * @since 1.0.0
  */
 @Configurable
-public class VaadinSpringDemoApplication extends Application {
+public class VaadinSpringDemoApplication extends UI {
     private static final long serialVersionUID = 1L;
 
     public static final String APPLICATION_TITLE = "Vaading-Spring Demo";
@@ -26,8 +26,8 @@ public class VaadinSpringDemoApplication extends Application {
     private MainWindow mainWindow;
 
     @Override
-    public void init() {
-        setMainWindow(mainWindow);
+    protected void init(VaadinRequest vaadinRequest) {
+        setContent(mainWindow);
+        //To change body of implemented methods use File | Settings | File Templates.
     }
-
 }
