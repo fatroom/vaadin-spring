@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Window;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * The main window for the demo.
  * 
@@ -25,7 +27,7 @@ import com.vaadin.ui.Window;
 public class MainWindow extends Window {
     private static final long serialVersionUID = 1L;
 
-    private static int instanceId = 0;
+    private static AtomicInteger instanceId = new AtomicInteger(0);
 
     @Autowired
     private TextLabelService textLabelService;
@@ -33,7 +35,7 @@ public class MainWindow extends Window {
     public MainWindow() {
         super(VaadinSpringDemoApplication.APPLICATION_TITLE);
 
-        instanceId++;
+        instanceId.incrementAndGet();
 
         addComponent(new Label(VaadinSpringDemoApplication.APPLICATION_TITLE));
     }
