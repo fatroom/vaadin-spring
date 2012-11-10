@@ -4,3 +4,6 @@
 .settings
 # Maven
 target
+# Idea
+*.iml
+.idea
