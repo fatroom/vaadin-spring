@@ -3,9 +3,11 @@
  * All Rights Reserved.
  */
 
-package org.noisyteam.sample.vaadin.modules.a;
+package org.noisyteam.sample.vaadin.modules.common;
 
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * A dummy service that should be shared between all user sessions.
@@ -16,10 +18,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class TextLabelService {
 
-    private static int instanceId = 0;
+    private static AtomicInteger instanceId = new AtomicInteger(0);
 
     public TextLabelService() {
-        instanceId++;
+        instanceId.incrementAndGet();
     }
 
     public String getInstanceText() {

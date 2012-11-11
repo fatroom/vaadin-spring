@@ -7,9 +7,11 @@ package org.noisyteam.sample.vaadin.modules.ui;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
-import org.noisyteam.sample.vaadin.modules.a.MainWindow;
+import org.noisyteam.sample.vaadin.modules.common.SampleModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+
+import java.util.List;
 
 /**
  * Main application entry point for the Vaadin-Spring Demo Application.
@@ -24,7 +26,7 @@ public class VaadinSpringDemoApplication extends UI {
     public static final String APPLICATION_TITLE = "Vaading-Spring Demo";
 
     @Autowired
-    private MainWindow mainWindow;
+    private List<SampleModule> modules;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -40,11 +42,13 @@ public class VaadinSpringDemoApplication extends UI {
         tabsheet.addTab(myTabRoot);
 //        Component cmp = new MainWindow();
 //        ((MainWindow)cmp).addInstanceLabels();
-        tabsheet.addTab(mainWindow);
+        for (SampleModule module: modules) {
+            tabsheet.addTab(module.getView());
+            tabsheet.getTab(module.getView()).setCaption(module.getName());
+        }
 
 // Get the Tab holding the component and set its caption.
         tabsheet.getTab(myTabRoot).setCaption("My Tab");
-        tabsheet.getTab(mainWindow).setCaption("Second");
         addComponent(tabsheet);
     }
 }

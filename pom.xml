@@ -28,7 +28,9 @@
     </properties>
 
     <modules>
+        <module>common</module>
         <module>module_a</module>
+        <module>module_b</module>
         <module>ui</module>
     </modules>
 

@@ -9,17 +9,12 @@
         <artifactId>showcase</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>module_a</artifactId>
+    <artifactId>common</artifactId>
 
     <name>Vaadin Spring Demo UI module</name>
     <description>Vaadin and Spring integration showcase.</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.noisyteam.sample.vaadin.modules</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-server</artifactId>

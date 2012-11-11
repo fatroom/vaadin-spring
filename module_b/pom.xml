@@ -9,7 +9,7 @@
         <artifactId>showcase</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>module_a</artifactId>
+    <artifactId>module_b</artifactId>
 
     <name>Vaadin Spring Demo UI module</name>
     <description>Vaadin and Spring integration showcase.</description>
