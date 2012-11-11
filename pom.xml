@@ -28,6 +28,7 @@
     </properties>
 
     <modules>
+        <module>module_a</module>
         <module>ui</module>
     </modules>
 

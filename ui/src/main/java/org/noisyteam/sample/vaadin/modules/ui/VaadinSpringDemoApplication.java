@@ -3,10 +3,11 @@
  * All Rights Reserved.
  */
 
-package com.navinpeiris.vaadin_spring;
+package org.noisyteam.sample.vaadin.modules.ui;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
+import org.noisyteam.sample.vaadin.modules.a.MainWindow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 

@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package com.navinpeiris.vaadin_spring;
+package org.noisyteam.sample.vaadin.modules.a;
 
 import javax.annotation.PostConstruct;
 
@@ -26,6 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Scope("session")
 public class MainWindow extends VerticalLayout {
     private static final long serialVersionUID = 1L;
+    public static final String APPLICATION_TITLE = "Vaading-Spring Demo";
 
     private static AtomicInteger instanceId = new AtomicInteger(0);
 
@@ -41,7 +42,7 @@ public class MainWindow extends VerticalLayout {
     @PostConstruct
     public void addInstanceLabels() {
 
-        addComponent(new Label(VaadinSpringDemoApplication.APPLICATION_TITLE));
+        addComponent(new Label(APPLICATION_TITLE));
 
         addComponent(new Label("MainWindow instanceId: " + instanceId));
         addComponent(new Label(textLabelService.getInstanceText()));

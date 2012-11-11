@@ -33,7 +33,7 @@ your application URL. Always set this true in production environment. -->
         <servlet-class>com.vaadin.server.VaadinServlet</servlet-class>
         <init-param>
             <param-name>UI</param-name>
-            <param-value>com.navinpeiris.vaadin_spring.VaadinSpringDemoApplication</param-value>
+            <param-value>org.noisyteam.sample.vaadin.modules.ui.VaadinSpringDemoApplication</param-value>
             <description>Vaadin UI to display</description>
         </init-param>
     </servlet>

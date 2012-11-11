@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package com.navinpeiris.vaadin_spring;
+package org.noisyteam.sample.vaadin.modules.a;
 
 import org.springframework.stereotype.Component;
 
