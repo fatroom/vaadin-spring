@@ -7,12 +7,12 @@ package com.navinpeiris.vaadin_spring;
 
 import javax.annotation.PostConstruct;
 
+import com.vaadin.ui.VerticalLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Window;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Component
 @Scope("session")
-public class MainWindow extends Window {
+public class MainWindow extends VerticalLayout {
     private static final long serialVersionUID = 1L;
 
     private static AtomicInteger instanceId = new AtomicInteger(0);
@@ -33,15 +33,16 @@ public class MainWindow extends Window {
     private TextLabelService textLabelService;
 
     public MainWindow() {
-        super(VaadinSpringDemoApplication.APPLICATION_TITLE);
 
         instanceId.incrementAndGet();
 
-        addComponent(new Label(VaadinSpringDemoApplication.APPLICATION_TITLE));
     }
 
     @PostConstruct
     public void addInstanceLabels() {
+
+        addComponent(new Label(VaadinSpringDemoApplication.APPLICATION_TITLE));
+
         addComponent(new Label("MainWindow instanceId: " + instanceId));
         addComponent(new Label(textLabelService.getInstanceText()));
     }

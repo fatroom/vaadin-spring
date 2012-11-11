@@ -6,7 +6,7 @@
 package com.navinpeiris.vaadin_spring;
 
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.ui.UI;
+import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
@@ -27,7 +27,23 @@ public class VaadinSpringDemoApplication extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        setContent(mainWindow);
-        //To change body of implemented methods use File | Settings | File Templates.
+        // Create an empty tab sheet.
+        TabSheet tabsheet = new TabSheet();
+
+// Create a component to put in a tab and put
+// some content in it.
+        VerticalLayout myTabRoot = new VerticalLayout();
+        myTabRoot.addComponent(new Label("Hello, I am a Tab!"));
+
+// Add the component to the tab sheet as a new tab.
+        tabsheet.addTab(myTabRoot);
+//        Component cmp = new MainWindow();
+//        ((MainWindow)cmp).addInstanceLabels();
+        tabsheet.addTab(mainWindow);
+
+// Get the Tab holding the component and set its caption.
+        tabsheet.getTab(myTabRoot).setCaption("My Tab");
+        tabsheet.getTab(mainWindow).setCaption("Second");
+        addComponent(tabsheet);
     }
 }
