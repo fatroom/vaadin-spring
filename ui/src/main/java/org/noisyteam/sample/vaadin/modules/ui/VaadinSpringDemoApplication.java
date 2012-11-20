@@ -5,11 +5,13 @@
 
 package org.noisyteam.sample.vaadin.modules.ui;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
 import org.noisyteam.sample.vaadin.modules.common.SampleModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
 
@@ -20,8 +22,8 @@ import java.util.List;
  * @since 1.0.0
  */
 @Configurable
+@PreserveOnRefresh
 public class VaadinSpringDemoApplication extends UI {
-    private static final long serialVersionUID = 1L;
 
     public static final String APPLICATION_TITLE = "Vaading-Spring Demo";
 
@@ -30,6 +32,7 @@ public class VaadinSpringDemoApplication extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+
         // Create an empty tab sheet.
         TabSheet tabsheet = new TabSheet();
 
@@ -49,6 +52,7 @@ public class VaadinSpringDemoApplication extends UI {
 
 // Get the Tab holding the component and set its caption.
         tabsheet.getTab(myTabRoot).setCaption("My Tab");
-        addComponent(tabsheet);
+
+        setContent(tabsheet);
     }
 }
